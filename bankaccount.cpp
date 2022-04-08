@@ -1,0 +1,145 @@
+#include<iostream>
+#include<bits/stdc++.h>
+#include<stdlib.h>
+using namespace std;
+class Bankaccount
+{
+	private :
+		int acno;
+		float balance;
+		string cname,ifsc;
+		
+	public :
+		
+		void create()
+		{
+			string e;
+			cout<<"DO YOU WANT TO CREATE ACCOUNT (y/n) ";
+			cin>>e;
+			if(e=="y" || e =="yes")
+			{
+				cout<<"ENTER YOUR NAME : "<<endl;
+				cin>>cname;
+				cout<<"ENTER AMOUNT : "<<endl;
+				cin>>balance;
+				acno = 38492922;
+				ifsc="BISENTHILATOR";
+				cout<<"\n\nACCOUNT CREATED SUCCESSFULLY ....."<<endl;
+				cout<<"\nYOUR NAME : "<<cname<<endl;
+				cout<<"YOUR ACCOUNT NUMBER : "<<acno<<endl;
+				cout<<"YOUR IFSC CODE : "<<ifsc<<endl;
+				cout<<"YOUR CURRENT BALANCE : "<<balance<<endl;
+				
+			}
+			
+		}
+		
+		void deposit()
+		{
+			float dp;
+			cout<<"ENTER AMOUNT TO BE DEPOSITED : "<<endl;
+			cin>>dp;
+			balance =balance + dp;
+			cout<<"YOUR CURRENT BALANCE IS : "<<balance<<endl;
+			
+		}
+		
+		void withdraw()
+		{
+			float w;
+			cout<<"ENTER AMOUNT TO BE WITHDRAWED  : "<<endl;
+			cin>>w;
+			balance =balance - w;
+			cout<<"YOUR CURRENT BALANCE IS : "<<balance<<endl;
+		}
+		void close()
+		{
+			char g;
+			cout<<"ARE YOU REALLY WANT TO CLOSE THE ACCOUNT : (y/n)";
+			cin>>g;
+			if(g =='y')
+			{
+				acno = 0;
+				ifsc="0";
+				balance=0;
+				cout<<"\n\nACCOUTN CLOSED SUCCESFULLY....";
+				
+			}
+		}
+};
+int main()
+{
+	Bankaccount b1;
+	int op;
+	char q;
+	start :
+	cout<<"\nSELECT AN OPTION TO CONTINUE....\n";
+	cout<<"1.ACCOUNT OPENING \n";
+	cout<<"2.DEPOSIT \n";
+	cout<<"3.WITHDRAW \n";
+	cout<<"4.ACCOUNT CLOSING \n";
+	cout<<"ENTER 0 FOR EXIT\n";
+	cin>>op;
+
+
+	if(op!=0)
+	{
+	
+		switch (op)
+		{
+			case 1:
+				b1.create();
+				cout<<"\nDO YOU WANT TO CONTINUE ? ";
+				cin>>q;
+				if(q=='y')
+				{
+					goto start;
+				}
+				break;
+			case 2:
+				b1.deposit();
+				cout<<"\nDO YOU WANT TO CONTINUE ? ";
+				cin>>q;
+				if(q=='y')
+				{
+					goto start;
+				}
+				break;
+			case 3 :
+				b1.withdraw();
+				cout<<"DO YOU WANT TO CONTINUE ? ";
+				cin>>q;
+				if(q=='y')
+				{
+					goto start;
+				}
+				break;
+			case 4:
+				b1.close();
+				cout<<"\nDO YOU WANT TO CONTINUE ? ";
+				cin>>q;
+				if(q=='y')
+				{
+					goto start;
+				}
+				break;
+			default :
+				cout<<"ENTER ONLY 1 - 4 OR O FOR EXIT ....\n";
+				
+				break;			
+	 	}
+	}
+
+	
+
+	else
+	{
+	
+		cout<<"\n\n......THANK YOU FOR USING SRIVARSHAN's CODE  :) ......\n";
+		
+		
+		
+	}
+	return 0;
+}
+
